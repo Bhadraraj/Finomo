@@ -1,0 +1,312 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root {
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 262.1 83.3% 57.8%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 262.1 83.3% 57.8%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 224 71% 4%;
+  --foreground: 213 31% 91%;
+  --card: 224 71% 4%;
+  --card-foreground: 213 31% 91%;
+  --popover: 224 71% 4%;
+  --popover-foreground: 213 31% 91%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 84% 4.9%;
+  --secondary: 215 28% 17%;
+  --secondary-foreground: 213 31% 91%;
+  --muted: 223 47% 11%;
+  --muted-foreground: 215.4 16.3% 56.9%;
+  --accent: 216 34% 17%;
+  --accent-foreground: 213 31% 91%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 216 34% 17%;
+  --input: 216 34% 17%;
+  --ring: 212.7 26.8% 83.9%;
+  --chart-1: 220 70% 50%;
+  --chart-2: 160 60% 45%;
+  --chart-3: 30 80% 55%;
+  --chart-4: 280 65% 60%;
+  --chart-5: 340 75% 55%;
+}
+
+/* Dark mode table improvements */
+.dark table {
+  color: hsl(var(--foreground));
+}
+
+.dark table th {
+  color: hsl(var(--muted-foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark table td {
+  color: hsl(var(--foreground));
+  border-color: hsl(var(--border));
+}
+
+.dark table tr:hover {
+  background-color: hsl(var(--accent)) !important;
+}
+
+/* Ensure proper contrast for all text elements */
+.dark .text-gray-900 {
+  color: hsl(var(--foreground)) !important;
+}
+
+.dark .text-gray-600 {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.dark .text-gray-500 {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+.dark .text-gray-400 {
+  color: hsl(var(--muted-foreground)) !important;
+}
+
+/* Performance optimizations */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Reduce layout shifts */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Optimize transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Button theme overrides */
+.btn-primary {
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  border-color: hsl(var(--primary));
+}
+
+.btn-primary:hover {
+  background-color: hsl(var(--primary) / 0.9);
+  border-color: hsl(var(--primary) / 0.9);
+}
+
+.btn-primary:focus {
+  ring-color: hsl(var(--primary));
+}
+
+/* Override hardcoded purple buttons */
+.bg-purple-600 {
+  background-color: hsl(var(--primary)) !important;
+}
+
+.hover\:bg-purple-700:hover {
+  background-color: hsl(var(--primary) / 0.9) !important;
+}
+
+.text-purple-600 {
+  color: hsl(var(--primary)) !important;
+}
+
+.text-purple-700 {
+  color: hsl(var(--primary) / 0.9) !important;
+}
+
+.border-purple-600 {
+  border-color: hsl(var(--primary)) !important;
+}
+
+/* Badge theme colors */
+.bg-purple-100 {
+  background-color: hsl(var(--primary) / 0.1) !important;
+}
+
+.text-purple-700 {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Custom Scrollbar Styles - Add this to your globals.css */
+
+/* Webkit Scrollbars (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 3px; /* Reduced width for vertical scrollbar */
+  height: 3px; /* Reduced height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent; /* Remove background */
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.3); /* Light gray with transparency */
+  border-radius: 3px;
+  border: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.5); /* Slightly more visible on hover */
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent; /* Remove corner background */
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2); /* Even lighter for dark mode */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.4); /* Hover state for dark mode */
+}
+
+/* Firefox Scrollbars */
+* {
+  scrollbar-width: thin; /* Makes scrollbar thinner */
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent; /* thumb color, track color */
+}
+
+.dark * {
+  scrollbar-color: rgba(148, 163, 184, 0.2) transparent; /* Dark mode colors */
+}
+
+/* Remove scrollbar from specific elements if needed */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Smooth scrolling for better UX */
+html {
+  scroll-behavior: smooth;
+}
+ 
+.custom-scroll::-webkit-scrollbar {
+  width: 2px;  
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 2px;
+}
